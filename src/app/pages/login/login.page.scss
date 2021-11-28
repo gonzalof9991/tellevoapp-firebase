@@ -1,0 +1,32 @@
+#btn-validar {
+    --background: #F2F61B;
+    --color: white;
+}
+
+ion-content,
+ion-card,
+ion-item,
+ion-toolbar {
+    --background: #0C1843;
+}
+
+#btn-validar:hover {
+    --background: #0C1843;
+    --color: white;
+}
+
+#div-btn {
+    margin-top: 10px;
+}
+
+#div-card {
+    padding-top: 100px;
+}
+
+ion-segment-button {
+    --background: #0C1843;
+    --background-checked: #fafafa;
+    --color-checked: #0C1843;
+    --color: #f3f3f3;
+}
+

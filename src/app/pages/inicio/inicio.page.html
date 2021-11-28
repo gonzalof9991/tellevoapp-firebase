@@ -1,0 +1,44 @@
+
+<app-menu [title]="nombreTitle" ></app-menu>
+
+<ion-content>
+      <!--
+
+         <ion-card>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">¡Bienvenido {{usuario}}!</ion-card-title>
+        </ion-card-header>
+    </ion-card>
+
+      -->
+
+
+
+
+
+    <app-geolocation ></app-geolocation>
+
+
+
+</ion-content>
+<ion-footer>
+
+    <ion-toolbar>
+        <ion-button expand="block" fill="clear" shape="round" (click)="presentModal()" >
+            <ion-icon name="location-outline"></ion-icon>
+            <ion-text color="primary">
+                <p>A donde vamos?</p>
+            </ion-text>
+        </ion-button>
+
+    </ion-toolbar>
+</ion-footer>
+
+
+<!--
+  <app-footer>
+
+</app-footer>
+
+
+-->

@@ -1,0 +1,34 @@
+<app-toolbar [title]='nombreTitle'>
+
+</app-toolbar>
+
+<ion-content>
+    <div id="div-card">
+
+        <ion-card class="ion-text-center ion-padding-bottom ">
+            <ion-card-content>
+
+                <ion-item>
+
+                    <ion-input type="text" value="string" placeholder="Usuario" [(ngModel)]='usuario'></ion-input>
+                </ion-item>
+
+                <div id="div-btn" class="ion-padding-top">
+                    <ion-button (click)="validar()" expand="block">
+                        Recuperar
+                    </ion-button>
+                </div>
+
+
+            </ion-card-content>
+
+        </ion-card>
+
+
+    </div>
+
+
+</ion-content>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,22 @@
+ion-toolbar {
+    --background: rgb(12, 24, 67);
+    --color: white;
+}
+
+#title {
+    padding-right: 50px;
+}
+
+ion-menu {
+    --background: rgb(12, 24, 67);
+}
+
+#btn-user {
+    --background: rgb(12, 24, 67);
+}
+
+ion-item {
+    --color-activated: rgb(12, 24, 67);
+    /*  Color cuando se presiona */
+    --color: rgb(17, 16, 16);
+}

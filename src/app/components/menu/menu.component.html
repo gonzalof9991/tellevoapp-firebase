@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button autoHide="false"></ion-menu-button>
+
+        </ion-buttons>
+        <div id="title">
+            <ion-title class="ion-text-center ion-padding-right">{{title}}</ion-title>
+        </div>
+
+
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+        <ion-toolbar>
+            
+            <ion-button (click)="MostrarModal()" slot="primary" class="ion-padding-horizontal" id="btn-user">
+                <ion-icon name="person-outline"></ion-icon>
+            </ion-button>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+
+      <ion-list>
+        <ion-item *ngFor="let c of componentes | async" [routerLink]="c.redirectTo" detail>
+          <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
+          {{ c.name }}
+        </ion-item>
+      </ion-list>
+
+    </ion-content>
+</ion-menu>
+
+
+
+<ion-router-outlet id="main"></ion-router-outlet>
