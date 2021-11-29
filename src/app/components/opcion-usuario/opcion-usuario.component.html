@@ -1,40 +1,25 @@
 
 <ion-header>
-    <ion-toolbar>
-        <ion-button (click)="cerrarModal()" expand="block" fill="clear" shape="round">
-            Cerrar
+    <ion-toolbar color="success">
+        <ion-button (click)="cerrarModal()" color="success" expand="full">
+            <ion-icon name="arrow-down-circle-outline" slot="start"></ion-icon>
+             Cerrar
         </ion-button>
     </ion-toolbar>
 </ion-header>
 <ion-content>
-    <div id="opcion" #opcion >
-        <ion-card>
-            
+    <div>
+
+    
+   <ion-list>
+       <ion-list-header class="ion-text-center">
+           <ion-label>Viajes</ion-label>
         
-            <ion-card-header class="ion-text-center">
-                
-                <ion-card-title>Datos Viaje</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-                <ion-list>
-                    <ion-item>
-                        <ion-label position="floating">Destino</ion-label>
-                        <ion-input [(ngModel)] = "viaje.destino" type="text" placeholder="Ingresa tu destino"></ion-input>
-                    </ion-item>
-                    <ion-item>
-                        <ion-label position="floating">Tarifa</ion-label>
-                        <ion-input [(ngModel)] = "viaje.precio" maxlength="4" type="text" placeholder="Ingresa tu tarifa"></ion-input>
-                    </ion-item>
-                    
-                        <ion-button (click)="crearViaje()" class="ion-margin" expand="full" color="success"  size="large">
-                            Crear Viaje
-                        </ion-button>
-                    
-                </ion-list>
-            </ion-card-content>
-          </ion-card> 
-     
-    
-    </div>
-    
+       </ion-list-header>
+       <ion-item *ngFor="let viaje of viajes">
+           <ion-label class="ion-margin">{{viaje.destino}}</ion-label>
+           <ion-label class="ion-margin">${{viaje.tarifa}}</ion-label>
+       </ion-item>
+   </ion-list>
+</div>
 </ion-content>

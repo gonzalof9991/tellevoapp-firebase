@@ -1,8 +1,8 @@
-import { Usuario } from './../../interfaces/interfaces';
 import { NavigationExtras, Router ,ActivatedRoute} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MenuController, AlertController, ActionSheetController, ModalController } from '@ionic/angular';
 import { OpcionUsuarioComponent } from 'src/app/components/opcion-usuario/opcion-usuario.component';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 
 
@@ -17,7 +17,8 @@ export class InicioPage implements OnInit {
 
   constructor(private menu: MenuController, private router: Router, private activeRoute: ActivatedRoute,
     private alertController: AlertController,
-    private modalController: ModalController) {
+    private modalController: ModalController,
+    private firebase: FirebaseService) {
     this.nombreTitle = 'Inicio';
     this.activeRoute.queryParams.subscribe(params => {
       // Utilizo lambda
@@ -34,16 +35,17 @@ export class InicioPage implements OnInit {
    }
 
   ngOnInit() {
+    this.firebase.obtenerViajes().subscribe(res =>{
+      console.log(res);
+    })
     
   }
 
   
   ionViewWillEnter(){
     
-   
     console.log(this.usuario);
-    const b = () => { this.presentAlert(`Bienvenido ${this.usuario.usuario}`);};
-    setTimeout(b,100);
+    this.presentAlert(`Bienvenido ${this.usuario.usuario}`);
     
   }
 

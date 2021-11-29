@@ -1,4 +1,4 @@
-import { Usuario } from './../../interfaces/interfaces';
+
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { Geolocation , PositionOptions} from '@capacitor/geolocation';
 import { ToastController, AlertController } from '@ionic/angular';
@@ -17,23 +17,7 @@ export class GeolocationComponent  {
     lng:null
   };
   map = null;
-  user: Usuario;
-  usuarios: any = {
-    id: null,
-    name: '',
-    username: '',
-    email: '',
-    address: {
-      street: '',
-      suite: '',
-      city: '',
-      zipcode: '',
-      geo: {
-        lat: '',
-        lng: ''
-      }
-    },
-  };
+  
 
   btn: any;
 

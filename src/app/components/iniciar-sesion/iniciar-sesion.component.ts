@@ -1,9 +1,9 @@
+import { ApiserviceService } from './../../services/apiservice.service';
 
 import { NavigationExtras, Router } from '@angular/router';
-/* eslint-disable @typescript-eslint/member-ordering */
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AnimationController, ToastController , AlertController} from '@ionic/angular';
-import { Usuario } from 'src/app/interfaces/interfaces';
+
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -15,22 +15,15 @@ export class IniciarSesionComponent {
     usuario: '',
     pass: ''
   };
-
-
-  // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-  
   constructor(public toastController: ToastController,
               private animationCtrl: AnimationController,
               public alertController: AlertController,
-             
-              private router: Router) {
-               
-              }
+              private router: Router,
+              private api: ApiserviceService) 
+              {}
 
   // Selector
   @ViewChild('div',{read: ElementRef, static: true}) div: ElementRef;
-
-
 
   limpiar(){
     // Limpiar todos los datos
@@ -59,7 +52,7 @@ export class IniciarSesionComponent {
 
     this.moverDiv('2');
     if(this.flag){
-      // this.getUsuarios();
+      this.getUsuarios();
 
     }
     else{
@@ -71,9 +64,10 @@ export class IniciarSesionComponent {
 
   }
 
- /*  getUsuarios() {
-    this.dataService.getUsers().subscribe((data) => {
+ getUsuarios() {
+    this.api.getUsers().subscribe((data) => {
       let objeto = data;
+      console.log(data);
       for (const key in objeto) {
         if (Object.prototype.hasOwnProperty.call(objeto, key)) {
           const arreglo = objeto[key];
@@ -86,7 +80,7 @@ export class IniciarSesionComponent {
 
     
     });
-  } */
+  } 
 
   verificarUsuario(user: any){
     const arreglo = user;
@@ -112,7 +106,6 @@ export class IniciarSesionComponent {
   }
 
   // Avanzar a pagina inicio
-
   avanzar(){
     const navigationExtras: NavigationExtras = {
       state:{usuario: this.usuario}
@@ -121,10 +114,6 @@ export class IniciarSesionComponent {
     this.router.navigate(['/inicio'],navigationExtras);
   }
 
-
-
-
-
   async presentToast(msg: string) {
     const toast = await this.toastController.create({
       message: msg,
@@ -132,7 +121,6 @@ export class IniciarSesionComponent {
     });
     toast.present();
   }
-
 
    async presentAlert(msg: string) {
     const alert = await this.alertController.create({
@@ -144,7 +132,6 @@ export class IniciarSesionComponent {
     await alert.present();
   }
 
-
   moverDiv(x: string){
     const movery = this.animationCtrl.create()
     .addElement(this.div.nativeElement)
@@ -155,7 +142,6 @@ export class IniciarSesionComponent {
       { offset: 1, transform: 'translateY(0px)', opacity: '1' }
 
     ]);
-
 
     const moverx = this.animationCtrl.create()
     .addElement(this.div.nativeElement)
