@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button (click)="cerrar()" color="light" expand="full" fill="clear" shape="round">
+      <ion-icon name="chevron-down-circle-outline" slot="start"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="viaje">
+    <ion-item>
+      <ion-label position="stacked">Destino</ion-label>
+      <ion-input [(ngModel)]="viaje.destino"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Tarifa</ion-label>
+      <ion-input [(ngModel)]="viaje.tarifa"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Cupo</ion-label>
+      <ion-input [(ngModel)]="viaje.cupo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Cantidad de pasajeros</ion-label>
+      <ion-input [(ngModel)]="viaje.pasajeros"></ion-input>
+    </ion-item>
+  </div>
+  <ion-button  expand="block" color="success">
+    <ion-icon slot="start" name="save"></ion-icon>
+    Update
+  </ion-button>
+  <ion-button  expand="block" color="danger">
+    <ion-icon slot="start" name="trash"></ion-icon>
+    Delete
+  </ion-button>
+</ion-content>

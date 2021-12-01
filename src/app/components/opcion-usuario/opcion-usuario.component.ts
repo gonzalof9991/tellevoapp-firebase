@@ -5,6 +5,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ModalController, AlertController, AnimationController } from '@ionic/angular';
 import { modalController } from '@ionic/core';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { ModalviajeComponent } from '../modalviaje/modalviaje.component';
 
 @Component({
   selector: 'app-opcion-usuario',
@@ -36,15 +37,22 @@ export class OpcionUsuarioComponent implements OnInit {
   ngAfterViewInit() {
   }
 
-  
-  
   async close(){
     await this.modalCtrl.dismiss();
   }
 
   
-  cerrarModal(){
+  async cerrarModal(){
     this.close();
   }
 
+  async abrirViaje(viaje){
+    const modal = await this.modalCtrl.create({
+      component: ModalviajeComponent,
+      componentProps: {id: viaje.id},
+      keyboardClose: true,
+      
+    })
+    modal.present();
+  }
 }

@@ -24,7 +24,7 @@ export class ApiserviceService {
   }
 
   // apiURL = 'http://192.168.1.18:3000'; // Gonza
-  apiURL = 'https://raw.githubusercontent.com/gonzalor9991/TellevoApp/gonza-branch/db.json?token=ATJLLBTR2O4OUIMTNURI5BDBVN4GW'; // Moises
+  apiURL = 'https://raw.githubusercontent.com/gonzalor9991/tellevoapp-firebase/master/db.json?token=ATJLLBX5BQMTO74JUXPM54TBVVYPG'; // Moises
   getUsers(): Observable<any>{
     return this.http.get(this.apiURL).pipe(
       retry(3)

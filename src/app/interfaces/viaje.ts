@@ -3,6 +3,8 @@ export interface Viaje {
     destino: string,
     tarifa: string,
     cupo: string,
-    pasajeros: string
+    pasajeros: string,
+    lat: number,
+    lng: number
 
 }

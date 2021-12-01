@@ -3,23 +3,26 @@
     <ion-toolbar color="success">
         <ion-button (click)="cerrarModal()" color="success" expand="full">
             <ion-icon name="arrow-down-circle-outline" slot="start"></ion-icon>
-             Cerrar
+            
         </ion-button>
     </ion-toolbar>
 </ion-header>
 <ion-content>
     <div>
-
-    
-   <ion-list>
-       <ion-list-header class="ion-text-center">
-           <ion-label>Viajes</ion-label>
-        
-       </ion-list-header>
-       <ion-item *ngFor="let viaje of viajes">
-           <ion-label class="ion-margin">{{viaje.destino}}</ion-label>
-           <ion-label class="ion-margin">${{viaje.tarifa}}</ion-label>
-       </ion-item>
-   </ion-list>
+        <ion-card>
+            <ion-card-content>
+                <ion-list>
+                    <ion-list-header class="ion-text-center">
+                        <ion-label>Viajes</ion-label>
+                     
+                    </ion-list-header>
+                    <ion-item *ngFor="let viaje of viajes" (click)="abrirViaje(viaje)">
+                        <ion-label class="ion-margin">{{viaje.destino}}</ion-label>
+                        <ion-label class="ion-margin">${{viaje.tarifa}}</ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-card-content>         
+        </ion-card>
+   
 </div>
 </ion-content>

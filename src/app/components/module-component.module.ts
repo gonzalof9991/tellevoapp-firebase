@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { ModalviajeComponent } from './modalviaje/modalviaje.component';
 
 
 
@@ -20,7 +21,8 @@ import { IonicModule } from '@ionic/angular';
     OpcionUsuarioComponent,
     ModalComponent,
     GeolocationComponent,
-    MenuComponent
+    MenuComponent,
+    ModalviajeComponent
   ],
   exports:[
     FooterComponent,
@@ -29,7 +31,8 @@ import { IonicModule } from '@ionic/angular';
     OpcionUsuarioComponent,
     ModalComponent,
     GeolocationComponent,
-    MenuComponent
+    MenuComponent,
+    ModalviajeComponent
   ],
   imports: [
     CommonModule,
