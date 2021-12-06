@@ -50,10 +50,9 @@ export class OpcionUsuarioComponent implements OnInit {
     this.close();
   }
 
-  async abrirViaje(viaje){
+  async abrirViaje(){
     const modal = await this.modalCtrl.create({
       component: MarcarviajeComponent,
-      componentProps: {id: viaje.id},
       keyboardClose: true,
       
     })

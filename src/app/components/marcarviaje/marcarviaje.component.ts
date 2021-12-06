@@ -122,7 +122,6 @@ export class MarcarviajeComponent implements OnInit {
 guardar(){
   this.mapService.guardarU(this.ubicacion);
   this.presentAlert('Ubicacion guardada');
-  this.close();
 }
 async close(){
   await this.modalCtrl.dismiss();

@@ -1,22 +1,26 @@
 
 <ion-header>
-    <ion-toolbar >
-        <ion-button (click)="cerrarModal()"expand="full">
-            <ion-icon name="arrow-down-circle-outline" slot="start"></ion-icon>
-            
-        </ion-button>
+    <ion-toolbar>
+        <ion-title>Viajes</ion-title>
+        <ion-button (click)="cerrarModal()"expand="full" class="btn-salir" slot="start">
+                    <ion-icon name="close-outline"></ion-icon>
+                    
+        </ion-button>        
+           
     </ion-toolbar>
+   
+    
 </ion-header>
 <ion-content>
-    <div>
+    <div id="div-viajes">
         <ion-card>
             <ion-card-content>
                 <ion-list>
-                    <ion-list-header class="ion-text-center">
-                        <ion-label>Viajes</ion-label>
-                     
+                    <ion-list-header>
+                        <ion-card-subtitle>Disponibles</ion-card-subtitle>
                     </ion-list-header>
-                    <ion-item *ngFor="let viaje of viajes" (click)="abrirViaje(viaje)">
+                   
+                    <ion-item *ngFor="let viaje of viajes">
                         <ion-label class="ion-margin">{{viaje.destino}}</ion-label>
                         <ion-label class="ion-margin">${{viaje.tarifa}}</ion-label>
                     </ion-item>
@@ -24,5 +28,32 @@
             </ion-card-content>         
         </ion-card>
    
+</div>
+<div id="crear-viaje">
+    <ion-card>
+        <ion-card-content>
+            <ion-list>
+                <ion-list-header>
+                    <ion-card-subtitle>Crear Viaje</ion-card-subtitle>
+                </ion-list-header>
+                <ion-item>
+                    <ion-label position="floating" color="medium">Inicio</ion-label>
+                    <ion-input type="text" placeholder="Inicio" value="Duoc UC"></ion-input>
+                </ion-item>
+                <ion-item (click)="abrirViaje()">
+                    
+                    <ion-input type="text" placeholder="¿A donde vas?"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating" color="medium">Capacidad</ion-label>
+                    <ion-input type="text" placeholder="3" maxlength="1" ></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating" color="medium">Tarifa</ion-label>
+                    <ion-input type="text" placeholder="1500" maxlength="4" ></ion-input>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
 </div>
 </ion-content>
