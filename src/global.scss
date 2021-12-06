@@ -29,7 +29,7 @@
 
 // Alert clase 
 .my-custom-class{
-
+    text-align: center;
     .alert-wrapper{
         background-color: #08102e;
 
@@ -37,12 +37,12 @@
     .alert-head{
         background-color: #08102e;
         .alert-title{
-            color: antiquewhite;
+            color: rgb(245, 245, 245);
         }
         
     }
     .alert-message{
-        color: aliceblue;
+        color: rgb(255, 255, 255);
         font-size: 20px;
     }
     
@@ -54,7 +54,9 @@
 
 
 
-.toolbar-container{
-    background: #f5f5f8;
+// Alert mapa , crear viaje
 
+.alert-mapa{
+    text-align: center;
+    
 }

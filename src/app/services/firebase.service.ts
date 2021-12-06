@@ -34,6 +34,7 @@ export class FirebaseService {
 
   actualizarViaje(viaje: Viaje){
     const noteDocRef = doc(this.firestore, `Viajes/${viaje.id}`);
-    return updateDoc(noteDocRef, {destino: viaje.destino, tarifa: viaje.tarifa, cupo: viaje.cupo, pasajeros: viaje.pasajeros});
+    return updateDoc(noteDocRef, {destino: viaje.destino, tarifa: viaje.tarifa, capacidad: viaje.capacidad, pasajeros: viaje.pasajeros, ubicacion: viaje.ubicacion});
   } 
+  
 }

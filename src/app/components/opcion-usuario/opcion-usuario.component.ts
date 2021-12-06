@@ -1,3 +1,5 @@
+import { MapserviceService } from 'src/app/services/mapservice.service';
+import { MarcarviajeComponent } from './../marcarviaje/marcarviaje.component';
 
 
 import { Router, NavigationExtras } from '@angular/router';
@@ -20,7 +22,8 @@ export class OpcionUsuarioComponent implements OnInit {
     public router: Router,
     private alertController: AlertController,
     private animationCtrl: AnimationController,
-    private firebase: FirebaseService
+    private firebase: FirebaseService,
+    private mapService: MapserviceService
     ) {
       this.firebase.obtenerViajes().subscribe(res => {
         console.log(res);
@@ -35,6 +38,7 @@ export class OpcionUsuarioComponent implements OnInit {
   ngOnInit() {}
 
   ngAfterViewInit() {
+    console.log(this.mapService.mostrarU());
   }
 
   async close(){
@@ -48,7 +52,7 @@ export class OpcionUsuarioComponent implements OnInit {
 
   async abrirViaje(viaje){
     const modal = await this.modalCtrl.create({
-      component: ModalviajeComponent,
+      component: MarcarviajeComponent,
       componentProps: {id: viaje.id},
       keyboardClose: true,
       

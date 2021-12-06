@@ -2,9 +2,8 @@ export interface Viaje {
     id?: string,
     destino: string,
     tarifa: string,
-    cupo: string,
+    capacidad: string,
     pasajeros: string,
-    lat: number,
-    lng: number
+    ubicacion: any
 
 }

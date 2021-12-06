@@ -1,3 +1,4 @@
+import { MarcarviajeComponent } from './marcarviaje/marcarviaje.component';
 import { MenuComponent } from './menu/menu.component';
 import { GeolocationComponent } from './geolocation/geolocation.component';
 import { ModalComponent } from './modal/modal.component';
@@ -22,7 +23,8 @@ import { ModalviajeComponent } from './modalviaje/modalviaje.component';
     ModalComponent,
     GeolocationComponent,
     MenuComponent,
-    ModalviajeComponent
+    ModalviajeComponent,
+    MarcarviajeComponent
   ],
   exports:[
     FooterComponent,
@@ -32,7 +34,8 @@ import { ModalviajeComponent } from './modalviaje/modalviaje.component';
     ModalComponent,
     GeolocationComponent,
     MenuComponent,
-    ModalviajeComponent
+    ModalviajeComponent,
+    MarcarviajeComponent
   ],
   imports: [
     CommonModule,
