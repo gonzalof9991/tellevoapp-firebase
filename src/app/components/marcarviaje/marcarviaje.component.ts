@@ -9,7 +9,7 @@ import { MapserviceService } from 'src/app/services/mapservice.service';
 })
 export class MarcarviajeComponent implements OnInit {
   ubicacion: any;
-  
+  nombreTitle: any = 'Ubicacion';
   constructor(private alertCtrl: AlertController, private mapService: MapserviceService, private modalCtrl: ModalController) {
     
     

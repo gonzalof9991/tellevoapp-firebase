@@ -9,7 +9,7 @@ import { ModalController } from '@ionic/angular';
 export class MensajeComponent implements OnInit {
 
   constructor( private modalCtrl: ModalController) { }
-
+  nombreTitle: any = 'Mensaje';
   ngOnInit() {}
   
   async close(){

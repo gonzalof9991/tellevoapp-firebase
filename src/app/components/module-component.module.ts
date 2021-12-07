@@ -1,3 +1,4 @@
+import { ToolbarsalirComponent } from './toolbarsalir/toolbarsalir.component';
 import { MensajeComponent } from './mensaje/mensaje.component';
 import { MarcarviajeComponent } from './marcarviaje/marcarviaje.component';
 import { MenuComponent } from './menu/menu.component';
@@ -13,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ModalviajeComponent } from './modalviaje/modalviaje.component';
 import { MapaComponent } from './mapa/mapa.component';
+import { CredencialComponent } from './credencial/credencial.component';
 
 
 
@@ -28,7 +30,9 @@ import { MapaComponent } from './mapa/mapa.component';
     ModalviajeComponent,
     MarcarviajeComponent,
     MapaComponent,
-    MensajeComponent
+    MensajeComponent,
+    CredencialComponent,
+    ToolbarsalirComponent
   ],
   exports:[
     FooterComponent,
@@ -41,7 +45,9 @@ import { MapaComponent } from './mapa/mapa.component';
     ModalviajeComponent,
     MarcarviajeComponent,
     MapaComponent,
-    MensajeComponent
+    MensajeComponent,
+    CredencialComponent,
+    ToolbarsalirComponent
   ],
   imports: [
     CommonModule,

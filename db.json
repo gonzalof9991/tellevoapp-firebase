@@ -8,6 +8,7 @@
       "email": "go.rojasf@duocuc.cl",
       "sede": "Viña del mar",
       "carrera": "Ingenieria en Informatica",
+      "rut": "20.359.255-8",
       "tipoUsuario": "Chofer",
       "auto": {
         "patente": "LH690",
@@ -23,6 +24,7 @@
       "email": "luisSalass@gmail.com",
       "sede": "Viña del mar",
       "carrera": "Analista programador",
+      "rut": "20.259.265-k",
       "tipoUsuario": "Pasajero",
       "password": "1234"
     }
