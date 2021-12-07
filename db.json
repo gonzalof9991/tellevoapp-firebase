@@ -1,21 +1,13 @@
 {
   "usuarios": [
-    {
-      "nombre": "Manuel",   
-      "apellido": "Perez",
-      "usuario": "MaPerez",
-      "tipoUsuario": "Chofer",
-      "auto": {
-        "patente": "LH678",
-        "color": "Negro",
-        "modelo": "Nissan"
-      },
-      "password": "1234"
-    },
+    
     {
       "nombre": "Gonzalo ",
       "apellido": "Rojas",
       "usuario": "goRojasf",
+      "email": "go.rojasf@duocuc.cl",
+      "sede": "Viña del mar",
+      "carrera": "Ingenieria en Informatica",
       "tipoUsuario": "Chofer",
       "auto": {
         "patente": "LH690",
@@ -25,55 +17,16 @@
       "password": "1234"
     },
     {
-      "nombre": "Luis ",
+      "nombre": "Luis",
       "apellido": "Salas",
       "usuario": "luisS",
-      "tipoUsuario": "Chofer",
-      "auto": {
-        "patente": "KL690",
-        "color": "Rojo",
-        "modelo": "Toyota 45"
-      },
-      "password": "1234"
-    },
-    {
-      "nombre": "Eduardo ",
-      "apellido": "Silva",
-      "usuario": "eduSilva",
-      "tipoUsuario": "Chofer",
-      "auto": {
-        "patente": "KL645",
-        "color": "Verde",
-        "modelo": "Toyota 458"
-      },
-      "password": "1234"
-    },
-    {
-      "nombre": "Pablo",
-      "apellido": "Perez",
-      "usuario": "paPerez",
-      "tipoUsuario": "Pasajero",
-      "password": "1234"
-    },
-    {
-      "nombre": "Laura ",
-      "apellido": "Rojas",
-      "usuario": "lauRojas",
-      "tipoUsuario": "Chofer",
-      "auto": {
-        "patente": "GH645",
-        "color": "Amarillo",
-        "modelo": "Audi 458"
-      },
-      "password": "1234"
-    },
-    {
-      "nombre": "Moises",
-      "apellido": "Prado",
-      "usuario": "jkmoises",
+      "email": "luisSalass@gmail.com",
+      "sede": "Viña del mar",
+      "carrera": "Analista programador",
       "tipoUsuario": "Pasajero",
       "password": "1234"
     }
+   
    
   ]
 }

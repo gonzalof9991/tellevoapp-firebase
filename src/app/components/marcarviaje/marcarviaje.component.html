@@ -2,11 +2,15 @@
 
 <ion-header>
   <ion-toolbar>
-      <ion-title>Ubicacion</ion-title>
-      <ion-button (click)="close()"expand="full" class="btn-salir" slot="start">
-                  <ion-icon name="close-outline"></ion-icon>
-                  
-      </ion-button>        
+    <ion-row>
+      <ion-col size="4">
+          <img (click)="close()" class="img-volver" src="https://image.flaticon.com/icons/png/512/120/120826.png" alt="">
+      </ion-col>
+      <ion-col size="4">
+          <ion-title>Ubicacion</ion-title>   
+      </ion-col>
+      <ion-col size="4"></ion-col>
+  </ion-row>     
          
   </ion-toolbar>
  
