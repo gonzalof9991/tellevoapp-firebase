@@ -19,6 +19,9 @@ export class OpcionUsuarioComponent implements OnInit {
   viajes = [];
   viaje: any = {
      chofer: '',
+     patente: '',
+     color: '',
+     modelo: '',
      inicio: 'Duoc UC',
      destino: '',
      tarifa: '',
@@ -86,9 +89,10 @@ export class OpcionUsuarioComponent implements OnInit {
   flag3: boolean = false; // Capacidad
   fecha: any;
   validar(){
-    if (this.viaje.destino !== '' && this.viaje.tarifa !== '' && this.viaje.capacidad !== ''   ) {
+    if (this.viaje.destino !== '' && this.viaje.tarifa !== '' && this.viaje.capacidad !== '' 
+    && this.viaje.patente !== '' && this.viaje.modelo !== ''  && this.viaje.color !== '' ) {
       
-      this.flag = true;
+       this.flag = true;
     }
     else{
       this.flag = false;
@@ -128,8 +132,21 @@ export class OpcionUsuarioComponent implements OnInit {
       if (this.flag2) {
         if (this.flag3) {
           this.fecha = this.crearFecha();
-          this.firebase.agregarViaje({chofer: this.usuario.usuario,inicio: this.viaje.inicio, destino: this.viaje.destino,
-          tarifa: this.viaje.tarifa, horaSalida: this.fecha, capacidad: this.viaje.capacidad, pasajero: ''}) ;
+          
+          this.firebase.agregarViaje({
+          chofer: this.usuario.usuario,
+          patente: this.viaje.patente,
+          color: this.viaje.color,
+          modelo: this.viaje.modelo,
+          inicio: this.viaje.inicio, 
+          destino: this.viaje.destino,
+          tarifa: this.viaje.tarifa, 
+          horaSalida: this.fecha, 
+          capacidad: this.viaje.capacidad,
+          pasajero: '',
+          email:this.usuario.email
+        }) ;
+          
           this.mensajeToast('Viaje creado exitosamente.');   
         }
           
@@ -145,7 +162,7 @@ export class OpcionUsuarioComponent implements OnInit {
   crearFecha(){
     const tiempoTranscurrido = Date.now();
     const hoy = new Date(tiempoTranscurrido);
-    return hoy.toUTCString();
+    return hoy.toDateString();
 
   }
 

@@ -31,7 +31,7 @@ export class MenuComponent implements OnInit {
 
     // Navegar con el api enrutador
     // Se agrega el navigation extras para sacar informacion para otra pagina
-    this.router.navigate(['/cargando'],navigationExtras);
+    this.router.navigate(['/login'],navigationExtras);
 
   }
 
