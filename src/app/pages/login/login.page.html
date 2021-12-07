@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
       <ion-segment (ionChange)="segmentChanged($event)">
           <ion-segment-button value="iniciar-sesion">
@@ -19,14 +19,46 @@
 <ion-router-outlet></ion-router-outlet>
 
 
-
-
-
-
-
-
-
 </ion-content>
 
 
 <app-footer></app-footer>
+ -->
+
+<ion-content>
+    <div class="div-login">
+        
+            <ion-card class="card-login">
+                <ion-card-content>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label position="floating">Usuario</ion-label>
+                            <ion-input type="text" placeholder="Ingresa tu usuario" [(ngModel)] ="usuario.usuario"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label position="floating">Contraseña</ion-label>
+                            <ion-input type="password" placeholder="Ingresa tu contraseña" [(ngModel)] ="usuario.pass"></ion-input>
+                        </ion-item>
+                        <ion-item class=" ion-text-center">
+                            <a routerLink="/restablecer">Recuperar contraseña</a>
+                        </ion-item>
+                    </ion-list>
+                </ion-card-content>
+                <ion-row class=" ion-padding">
+                    <ion-col size="5">
+                        <ion-button (click)="limpiar()" expand="block"  shape="round" color="tertiary">
+                            Limpiar
+                        </ion-button>
+                    </ion-col>
+                    <ion-col size="2"></ion-col>
+                    <ion-col size="5">
+                        <ion-button (click)="validar()" expand="block"  shape="round" color="success">
+                            Ingresar
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            
+            </ion-card>
+        
+    </div>
+</ion-content>

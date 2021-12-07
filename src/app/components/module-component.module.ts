@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ModalviajeComponent } from './modalviaje/modalviaje.component';
+import { MapaComponent } from './mapa/mapa.component';
 
 
 
@@ -24,7 +25,8 @@ import { ModalviajeComponent } from './modalviaje/modalviaje.component';
     GeolocationComponent,
     MenuComponent,
     ModalviajeComponent,
-    MarcarviajeComponent
+    MarcarviajeComponent,
+    MapaComponent
   ],
   exports:[
     FooterComponent,
@@ -35,7 +37,8 @@ import { ModalviajeComponent } from './modalviaje/modalviaje.component';
     GeolocationComponent,
     MenuComponent,
     ModalviajeComponent,
-    MarcarviajeComponent
+    MarcarviajeComponent,
+    MapaComponent
   ],
   imports: [
     CommonModule,
