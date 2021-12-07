@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { CargandoPageRoutingModule } from './cargando-routing.module';
 
 import { CargandoPage } from './cargando.page';
-import { ToolbarComponent } from 'src/app/components/toolbar/toolbar.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { ModuleComponentModule } from 'src/app/components/module-component.module';
 

@@ -92,6 +92,12 @@ export class LoginPage  {
         if(this.usuario.usuario === arreglo[i].usuario && this.usuario.pass ===arreglo[i].password  ){
           this.avanzar();
           flag = true;
+          this.api.guardarDatos(arreglo[i].nombre,arreglo[i].apellido,arreglo[i].usuario,arreglo[i].email,
+            arreglo[i].sede,
+            arreglo[i].carrera,
+            arreglo[i].rut,
+            arreglo[i].tipoUsuario,
+            arreglo[i].password)
           break;  // Se rompe el ciclo for 
         }
         // Si el usuario no existe o el pass es invalido en la api

@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { RestablecerPageRoutingModule } from './restablecer-routing.module';
 
 import { RestablecerPage } from './restablecer.page';
-import { ToolbarComponent } from 'src/app/components/toolbar/toolbar.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { ModuleComponentModule } from 'src/app/components/module-component.module';
 

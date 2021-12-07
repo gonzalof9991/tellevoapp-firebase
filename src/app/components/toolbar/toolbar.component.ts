@@ -6,9 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit {
-  @Input() title: string;  // Decorador input , recibe el parametro "title" desde home.page.html
-
-  constructor() {}
+  @Input() title: string;
+  constructor() { }
 
   ngOnInit() {}
 

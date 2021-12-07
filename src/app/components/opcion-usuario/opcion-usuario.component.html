@@ -1,68 +1,69 @@
 
-<ion-header>
-    <ion-toolbar>
-        <ion-row>
-            <ion-col size="4">
-                <img (click)="cerrarModal()" class="img-volver" src="https://image.flaticon.com/icons/png/512/120/120826.png" alt="">
-            </ion-col>
-            <ion-col size="4">
-                <ion-title>Viajes</ion-title>   
-            </ion-col>
-            <ion-col size="4"></ion-col>
-        </ion-row>   
-    </ion-toolbar>
-   
-    
-</ion-header>
+<app-toolbarsalir [title]="nombreTitle" ></app-toolbarsalir>
 <ion-content>
-    <div id="div-viajes">
-        <ion-card>
+    <div id="div-viajes" *ngIf="tipoUsuario() === false" >
+        <ion-title class="ion-margin ion-text-center">Disponibles</ion-title>
+        <ion-card *ngFor="let viaje of viajes">
             <ion-card-content>
-                <ion-list>
-                    <ion-list-header>
-                        <ion-card-subtitle>Disponibles</ion-card-subtitle>
-                    </ion-list-header>
+                <ion-list >
                    
-                    <ion-item *ngFor="let viaje of viajes">
-                        <ion-label class="ion-margin">{{viaje.destino}}</ion-label>
-                        <ion-label class="ion-margin">${{viaje.tarifa}}</ion-label>
-                    </ion-item>
+                    <ion-row>
+                        <ion-col size="12">
+                            <ion-label><br>Destino: {{viaje.destino}}</ion-label>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col size="6">
+                            <ion-label>Tarifa: ${{viaje.tarifa}}</ion-label>
+                        </ion-col>
+                        <ion-col size="6">
+                            <ion-label>Capacidad: {{viaje.capacidad}}</ion-label>
+                        </ion-col>
+                    </ion-row>
+                   
+
+                       
+                       
+                        
+                        <ion-button  expand="full"  shape="round" color="success"> 
+                            Tomar viaje
+                        </ion-button>
+                    
                 </ion-list>
             </ion-card-content>         
         </ion-card>
    
 </div>
-<div id="crear-viaje">
+<div id="crear-viaje" *ngIf="tipoUsuario()" >
     <ion-card>
         <ion-card-content>
             <ion-list>
                 <ion-list-header>
                     <ion-card-subtitle>Crear Viaje</ion-card-subtitle>
                 </ion-list-header>
-                <ion-item>
-                    <ion-label position="floating" color="medium">Inicio</ion-label>
-                    <ion-input type="text" placeholder="Inicio" value="Duoc UC"></ion-input>
-                </ion-item>
-                <ion-item (click)="abrirViaje()">
-                    
-                    <ion-input type="text" placeholder="¿A donde vas?"></ion-input>
+                <ion-item >
+                    <ion-label position="floating" color="medium">Destino</ion-label>
+                    <ion-input type="text" placeholder="¿A donde vas?" [(ngModel)]="viaje.destino"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label position="floating" color="medium">Capacidad</ion-label>
-                    <ion-input type="text" placeholder="3" maxlength="1" ></ion-input>
+                    <ion-input type="text" placeholder="3" maxlength="1" [(ngModel)]="viaje.capacidad"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label position="floating" color="medium">Tarifa</ion-label>
-                    <ion-input type="text" placeholder="1500" maxlength="4" ></ion-input>
+                    <ion-input type="text" placeholder="1500" maxlength="4" [(ngModel)]="viaje.tarifa" ></ion-input>
                 </ion-item>
             </ion-list>
-            <ion-button  expand="full"  color="success">
+            <ion-button  expand="full" class="bt-crear" (click)="crearViaje()">
                 Crear Viaje
             </ion-button>
-            <ion-button  expand="full" color="secondary">
+            <ion-button  expand="full" class="bt-clear" (click)="limpiar()">
                 Limpiar
             </ion-button>
         </ion-card-content>
     </ion-card>
 </div>
 </ion-content>
+
+<app-footer></app-footer>

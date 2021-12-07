@@ -1,12 +1,8 @@
 import { ToolbarsalirComponent } from './toolbarsalir/toolbarsalir.component';
 import { MensajeComponent } from './mensaje/mensaje.component';
-import { MarcarviajeComponent } from './marcarviaje/marcarviaje.component';
 import { MenuComponent } from './menu/menu.component';
 import { GeolocationComponent } from './geolocation/geolocation.component';
-import { ModalComponent } from './modal/modal.component';
 import { OpcionUsuarioComponent } from 'src/app/components/opcion-usuario/opcion-usuario.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { IniciarSesionComponent } from 'src/app/components/iniciar-sesion/iniciar-sesion.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,39 +11,34 @@ import { IonicModule } from '@ionic/angular';
 import { ModalviajeComponent } from './modalviaje/modalviaje.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { CredencialComponent } from './credencial/credencial.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 
 
 @NgModule({
   declarations: [
     FooterComponent,
-    IniciarSesionComponent,
-    ToolbarComponent,
     OpcionUsuarioComponent,
-    ModalComponent,
     GeolocationComponent,
     MenuComponent,
     ModalviajeComponent,
-    MarcarviajeComponent,
     MapaComponent,
     MensajeComponent,
     CredencialComponent,
-    ToolbarsalirComponent
+    ToolbarsalirComponent,
+    ToolbarComponent
   ],
   exports:[
     FooterComponent,
-    IniciarSesionComponent,
-    ToolbarComponent,
     OpcionUsuarioComponent,
-    ModalComponent,
     GeolocationComponent,
     MenuComponent,
     ModalviajeComponent,
-    MarcarviajeComponent,
     MapaComponent,
     MensajeComponent,
     CredencialComponent,
-    ToolbarsalirComponent
+    ToolbarsalirComponent,
+    ToolbarComponent
   ],
   imports: [
     CommonModule,

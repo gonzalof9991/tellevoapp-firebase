@@ -1,8 +1,7 @@
-import { ModalComponent } from './../modal/modal.component';
+
 import { NavigationExtras, Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { Componente } from '../../interfaces/interfaces';
 import { Observable } from 'rxjs';
 
 
@@ -12,7 +11,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-  componentes: Observable<Componente[]>; //Creando observable
+  
 
   @Input() title: string;
 

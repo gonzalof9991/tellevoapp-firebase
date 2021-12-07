@@ -30,4 +30,31 @@ export class ApiserviceService {
       retry(3)
       );
   };
+
+  usuario: any = {
+    nombre: "",
+    apellido: "",
+    usuario: "",
+    email: "",
+    sede: "",
+    carrera: "",
+    rut: "",
+    tipoUsuario: "",
+    password: ""
+  }
+  guardarDatos(nom,ap,user,email,sede,carr,rut,tipoU,pass){
+    this.usuario.nombre = nom;
+    this.usuario.apellido = ap;
+    this.usuario.usuario = user;
+    this.usuario.email = email;
+    this.usuario.sede = sede;
+    this.usuario.carrera = carr;
+    this.usuario.rut = rut;
+    this.usuario.tipoUsuario = tipoU;
+    this.usuario.password = pass;
+  }
+  
+  mostrarDatos(){
+    return this.usuario;
+  }
 }

@@ -1,13 +1,15 @@
 ion-content{
-    --background: rgb(12, 24, 67);
+    --background: white;
 }
 
 ion-title{
     text-align: left;
 }
 
-.btn-salir{
-    --background:rgb(255, 255, 255);
+.bt-crear{
+    --background: rgb(12, 24, 67);
+    --color:white;
+    text-align: center;
 }
 
 #div-viajes{

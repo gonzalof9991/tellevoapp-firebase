@@ -11,8 +11,8 @@
         </ion-col>
         <ion-col size="6">
           <ion-text >
-            <h3>Gonzalo Rojas</h3>
-            <p>20.359.255-8</p>
+            <h3>{{this.usuario.nombre}} {{this.usuario.apellido}}</h3>
+            <p>{{this.usuario.rut}}</p>
           </ion-text>
         </ion-col>
       </ion-row>
@@ -23,10 +23,13 @@
     <ion-card>
       <ion-list>
         <ion-item>
-          <ion-label>Ingenieria en Informatica</ion-label>
+          <ion-label>Carrera: {{this.usuario.carrera}}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>Viña del mar</ion-label>
+          <ion-label>Sede: {{this.usuario.sede}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Usuario: {{this.usuario.tipoUsuario}}</ion-label>
         </ion-item>
       </ion-list>
     </ion-card>
