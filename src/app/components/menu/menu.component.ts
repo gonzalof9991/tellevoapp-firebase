@@ -1,7 +1,3 @@
-/* eslint-disable @typescript-eslint/member-ordering */
-/* eslint-disable @typescript-eslint/semi */
-/* eslint-disable @typescript-eslint/naming-convention */
-/* eslint-disable prefer-const */
 import { ModalComponent } from './../modal/modal.component';
 import { NavigationExtras, Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
@@ -29,22 +25,16 @@ export class MenuComponent implements OnInit {
     // this.componentes = this.dataService.getMenuOpts();
   }
 
-  Salir(){
-    let navigationExtras: NavigationExtras = {
-    }
+  cerrarSesion(){
+    const navigationExtras: NavigationExtras = {
+      // al estado le asign un obj con clave y valor
+    };
 
     // Navegar con el api enrutador
     // Se agrega el navigation extras para sacar informacion para otra pagina
-    this.router.navigate(['/home'],navigationExtras);  // redirecciona a la Page pagina 2
-  }
+    this.router.navigate(['/cargando'],navigationExtras);
 
-  async MostrarModal(){
-    const modal = await this.modalCtrl.create({
-      component: ModalComponent
-    })
-    await modal.present();
   }
-
 
 
 

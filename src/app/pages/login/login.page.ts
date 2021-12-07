@@ -14,6 +14,7 @@ export class LoginPage  {
     usuario: '',
     pass: ''
   };
+  nombreTitle: any = 'Login';
   constructor(public toastController: ToastController,
               private animationCtrl: AnimationController,
               public alertController: AlertController,

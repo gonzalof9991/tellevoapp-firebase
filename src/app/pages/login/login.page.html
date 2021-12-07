@@ -1,32 +1,9 @@
-<!-- <ion-header>
-  <ion-toolbar>
-      <ion-segment (ionChange)="segmentChanged($event)">
-          <ion-segment-button value="iniciar-sesion">
-              <ion-text>
-                  <h6 class="text">Iniciar Sesion</h6>
-              </ion-text>
-          </ion-segment-button>
-      </ion-segment>
-  </ion-toolbar>
-</ion-header>
-<ion-content>
+<app-toolbar [title]='nombreTitle'>
 
-
-<div id="div-card" #card>
-
-
-</div>
-<ion-router-outlet></ion-router-outlet>
-
-
-</ion-content>
-
-
-<app-footer></app-footer>
- -->
+</app-toolbar>
 
 <ion-content>
-    <div class="div-login">
+    <div class="div-login" #div>
         
             <ion-card class="card-login">
                 <ion-card-content>
@@ -62,3 +39,5 @@
         
     </div>
 </ion-content>
+
+<app-footer></app-footer>

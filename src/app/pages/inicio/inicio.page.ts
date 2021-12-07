@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { MenuController, AlertController, ActionSheetController, ModalController } from '@ionic/angular';
 import { OpcionUsuarioComponent } from 'src/app/components/opcion-usuario/opcion-usuario.component';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { MensajeComponent } from 'src/app/components/mensaje/mensaje.component';
+import { CredencialComponent } from 'src/app/components/credencial/credencial.component';
 
 
 
@@ -69,6 +71,22 @@ export class InicioPage implements OnInit {
     });
     return await modal.present();
   };
+
+  async presentMensaje() {
+    const modal = await this.modalController.create({
+      component: MensajeComponent,
+      cssClass: 'my-custom-class'
+    });
+    return await modal.present();
+  };
+
+  async presentCredencial() {
+    const modal = await this.modalController.create({
+      component: CredencialComponent,
+      cssClass: 'my-custom-class'
+    });
+    return await modal.present();
+  }; 
 
 
 }

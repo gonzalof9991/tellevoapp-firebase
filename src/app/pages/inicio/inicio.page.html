@@ -14,12 +14,22 @@
     <ion-row>
       <ion-col size="4">
         <ion-card class="card-auto" (click)="presentModal()">
-          <ion-img src="https://i.pinimg.com/originals/12/ed/5a/12ed5af107550e3a0e24792b41c47a56.jpg" class="img-auto"></ion-img>
-            <p class="p-viaje">Viaje</p>
+          <img src="https://cdn-icons-png.flaticon.com/128/741/741407.png" id="img-auto">
+            <p class="p-viaje">Viajes</p>
         </ion-card>
       </ion-col>
-      <ion-col size="4"></ion-col>
-      <ion-col size="4"></ion-col>
+      <ion-col size="4">
+        <ion-card class="card-auto" (click)="presentMensaje()">
+          <img src="https://cdn-icons-png.flaticon.com/128/1653/1653630.png" id="img-auto">
+            <p class="p-viaje">Mensajes</p>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card class="card-auto" (click)="presentCredencial()">
+          <img src="https://cdn-icons-png.flaticon.com/128/998/998427.png" id="img-auto">
+            <p class="p-viaje">Credencial</p>
+        </ion-card>
+      </ion-col>
     </ion-row>
   </div>
 
@@ -38,15 +48,17 @@
 
 
 </ion-content>
-<ion-footer>
 
-    <!-- <ion-toolbar>
+<app-footer></app-footer>
+<!-- <ion-footer>
+
+    <<ion-toolbar>
         <ion-button expand="block" color="success"  (click)="presentModal()" >
           <ion-icon name="car-sport-outline" slot="start"></ion-icon>
            Viajes 
         </ion-button>
 
-    </ion-toolbar> -->
+    </ion-toolbar> 
 </ion-footer>
-
+ -->
 
