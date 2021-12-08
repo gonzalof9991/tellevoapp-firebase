@@ -100,7 +100,8 @@ export class LoginPage  {
             arreglo[i].carrera,
             arreglo[i].rut,
             arreglo[i].tipoUsuario,
-            arreglo[i].password)
+            arreglo[i].password,
+            arreglo[i].auto)
           break;  // Se rompe el ciclo for 
         }
         // Si el usuario no existe o el pass es invalido en la api

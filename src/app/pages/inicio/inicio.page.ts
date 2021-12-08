@@ -39,9 +39,6 @@ export class InicioPage implements OnInit {
    }
 
   ngOnInit() {
-    this.firebase.obtenerViajes().subscribe(res =>{
-      console.log(res);
-    })
     
   }
 

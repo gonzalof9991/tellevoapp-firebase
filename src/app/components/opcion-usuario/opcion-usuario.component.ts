@@ -55,6 +55,7 @@ export class OpcionUsuarioComponent implements OnInit {
 
   ionViewWillEnter(){
     this.usuario = this.api.mostrarDatos();
+    console.log(this.usuario);
     this.crearFecha();
     this.tipoUsuario();
   }
