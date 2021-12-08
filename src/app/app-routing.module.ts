@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -9,7 +10,8 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule),
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+    
     
   },
   {
@@ -24,6 +26,7 @@ const routes: Routes = [
   {
     path: 'cargando',
     loadChildren: () => import('./pages/cargando/cargando.module').then( m => m.CargandoPageModule)
+    
   },
   {
     path: '**',

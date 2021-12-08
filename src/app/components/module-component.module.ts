@@ -8,7 +8,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { ModalviajeComponent } from './modalviaje/modalviaje.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { CredencialComponent } from './credencial/credencial.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
@@ -21,7 +20,6 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     OpcionUsuarioComponent,
     GeolocationComponent,
     MenuComponent,
-    ModalviajeComponent,
     MapaComponent,
     MensajeComponent,
     CredencialComponent,
@@ -33,7 +31,6 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     OpcionUsuarioComponent,
     GeolocationComponent,
     MenuComponent,
-    ModalviajeComponent,
     MapaComponent,
     MensajeComponent,
     CredencialComponent,

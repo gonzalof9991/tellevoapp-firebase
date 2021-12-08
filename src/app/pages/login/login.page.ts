@@ -82,6 +82,8 @@ export class LoginPage  {
     });
   } 
 
+
+
   verificarUsuario(user: any){
     const arreglo = user;
     // Bandera para ver si el usuario o contraseña es incorrecto
@@ -91,6 +93,7 @@ export class LoginPage  {
       // Si el usuario y el pass existe en la api
         if(this.usuario.usuario === arreglo[i].usuario && this.usuario.pass ===arreglo[i].password  ){
           this.avanzar();
+          this.api.usuarioLogueado('1',this.usuario);
           flag = true;
           this.api.guardarDatos(arreglo[i].nombre,arreglo[i].apellido,arreglo[i].usuario,arreglo[i].email,
             arreglo[i].sede,

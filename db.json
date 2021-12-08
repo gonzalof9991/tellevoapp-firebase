@@ -26,7 +26,8 @@
       "carrera": "Analista programador",
       "rut": "20.259.265-k",
       "tipoUsuario": "Pasajero",
-      "password": "1234"
+      "password": "1234",
+      "auto": "no"
     }
    
    

@@ -57,4 +57,26 @@ export class ApiserviceService {
   mostrarDatos(){
     return this.usuario;
   }
+
+  // datos usuario login
+  login: {
+    user:'',
+    pass:''
+  }
+  flag: boolean = false;
+  usuarioLogueado(opcion: any, login: any){
+    if (opcion === '1') {
+      this.flag = true;
+      this.login = login;
+      return true;
+    }
+    else{
+      this.flag = false;
+      return false;
+    }
+  }
+
+  verificarSesion(){
+    console.log(this.login)
+  }
 }

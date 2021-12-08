@@ -1,3 +1,4 @@
+import { ApiserviceService } from 'src/app/services/apiservice.service';
 import { NavigationExtras, Router ,ActivatedRoute} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MenuController, AlertController, ActionSheetController, ModalController } from '@ionic/angular';
@@ -20,7 +21,8 @@ export class InicioPage implements OnInit {
   constructor(private menu: MenuController, private router: Router, private activeRoute: ActivatedRoute,
     private alertController: AlertController,
     private modalController: ModalController,
-    private firebase: FirebaseService) {
+    private firebase: FirebaseService,
+    private api: ApiserviceService) {
     this.nombreTitle = 'Inicio';
     this.activeRoute.queryParams.subscribe(params => {
       // Utilizo lambda
@@ -45,9 +47,10 @@ export class InicioPage implements OnInit {
 
   
   ionViewWillEnter(){
-    
     console.log(this.usuario);
     this.presentAlert(`Bienvenido ${this.usuario.usuario}`);
+    console.log(this.api.verificarSesion())
+    console.log('Page inicio')
     
   }
 

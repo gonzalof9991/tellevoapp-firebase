@@ -6,7 +6,6 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ModalController, AlertController, AnimationController, ToastController } from '@ionic/angular';
 import { modalController } from '@ionic/core';
 import { FirebaseService } from 'src/app/services/firebase.service';
-import { ModalviajeComponent } from '../modalviaje/modalviaje.component';
 
 @Component({
   selector: 'app-opcion-usuario',
@@ -103,12 +102,12 @@ export class OpcionUsuarioComponent implements OnInit {
   validarTarifa(){
     let tarifa = Number(this.viaje.tarifa);
     
-    if (tarifa <= 1500  && tarifa >=500) {
+    if (tarifa <= 2000  && tarifa >=500) {
         this.flag2 = true;
     }
     else{
       this.flag2 = false;
-      this.mensajeToast('La tarifa debe ser mayor a $500 y menor o igual a $1500');
+      this.mensajeToast('La tarifa debe ser mayor a $500 y menor o igual a $2000');
     }
   }
 
