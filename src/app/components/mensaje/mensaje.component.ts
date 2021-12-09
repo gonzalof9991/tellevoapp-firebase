@@ -62,4 +62,15 @@ export class MensajeComponent implements OnInit {
     });
   }
 
+  viajeEnCurso(){
+    let viaje = this.mensajeFirebase.verViaje();
+    let mensajes = this.mensajes.length;
+    if (viaje && mensajes >= 1 ) {
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
 }
