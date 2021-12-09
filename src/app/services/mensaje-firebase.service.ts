@@ -37,4 +37,21 @@ export class MensajeFirebaseService {
     return updateDoc(noteDocRef, {chofer: mensaje.chofer, destino: mensaje.destino, tarifa: mensaje.tarifa,
     horaSalida: mensaje.horaSalida, pasajero: mensaje.pasajero});
   } 
+
+  flag: boolean = false;
+
+  viajeEnCurso(opcion: any){
+    if (opcion === '1') {
+      this.flag = true;
+      return true;
+      
+    }
+    else{
+      return false;
+    }
+  }
+
+  verViaje(){
+    return this.flag;
+  }
 }

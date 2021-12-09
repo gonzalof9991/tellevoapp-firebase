@@ -190,6 +190,7 @@ export class OpcionUsuarioComponent implements OnInit {
             horaSalida: element.horaSalida,
             pasajero: this.usuario.usuario
           });
+          this.mensajeFirebase.viajeEnCurso('1');
       }
   });
   }

@@ -1,7 +1,7 @@
 <app-toolbarsalir [title]="nombreTitle" ></app-toolbarsalir>
 <ion-content>
 
-    <div>
+    <div *ngIf="viajeEnCurso()" >
         <ion-card>
             <ion-card-content>
                 <ion-list>
