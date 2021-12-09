@@ -24,36 +24,16 @@ export class ApiserviceService {
   }
 
   // apiURL = 'http://192.168.1.18:3000'; // Gonza
-  apiURL = 'https://raw.githubusercontent.com/gonzalor9991/tellevoapp-firebase/branch/db.json?token=ATJLLBU5ZUUA6CUSXH2AZXDBXJ3F6'; // Moises
+  apiURL = 'https://raw.githubusercontent.com/gonzalor9991/tellevoapp-firebase/branch/db.json?token=ATJLLBVMCWLSTGTJOUFFEGTBXJ35Y'; // Moises
   getUsers(): Observable<any>{
     return this.http.get(this.apiURL).pipe(
       retry(3)
       );
   };
 
-  usuario: any = {
-    nombre: "",
-    apellido: "",
-    usuario: "",
-    email: "",
-    sede: "",
-    carrera: "",
-    rut: "",
-    tipoUsuario: "",
-    password: "",
-    auto:""
-  }
-  guardarDatos(nom,ap,user,email,sede,carr,rut,tipoU,pass,auto){
-    this.usuario.nombre = nom;
-    this.usuario.apellido = ap;
-    this.usuario.usuario = user;
-    this.usuario.email = email;
-    this.usuario.sede = sede;
-    this.usuario.carrera = carr;
-    this.usuario.rut = rut;
-    this.usuario.tipoUsuario = tipoU;
-    this.usuario.password = pass;
-    this.usuario.auto = auto;
+  usuario: any ;
+  guardarDatos(usuario: any){
+    this.usuario = usuario;
   }
   
   mostrarDatos(){
@@ -79,6 +59,6 @@ export class ApiserviceService {
   }
 
   verificarSesion(){
-    console.log(this.login)
+    // console.log(this.login)
   }
 }

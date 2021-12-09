@@ -1,3 +1,4 @@
+import { MensajeFirebaseService } from './../../services/mensaje-firebase.service';
 import { ApiserviceService } from 'src/app/services/apiservice.service';
 import { Viaje } from './../../interfaces/viaje';
 
@@ -29,6 +30,7 @@ export class OpcionUsuarioComponent implements OnInit {
      pasajero: '',
   }
   usuario: any;
+  cantidadViaje: any;
   constructor(
     public modalCtrl: ModalController , 
     public router: Router,
@@ -36,14 +38,19 @@ export class OpcionUsuarioComponent implements OnInit {
     private animationCtrl: AnimationController,
     private firebase: FirebaseService,
     private api: ApiserviceService,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    private mensajeFirebase: MensajeFirebaseService
     
     ) {
+
+      this.usuario = this.api.mostrarDatos();
       this.firebase.obtenerViajes().subscribe(res => {
-        console.log(res);
         this.viajes = res;
+        this.contadorViaje(res);
+        
       
       })
+      
     }
 
     // eslint-disable-next-line @typescript-eslint/member-ordering
@@ -54,10 +61,9 @@ export class OpcionUsuarioComponent implements OnInit {
   
 
   ionViewWillEnter(){
-    this.usuario = this.api.mostrarDatos();
-    console.log(this.usuario);
     this.crearFecha();
     this.tipoUsuario();
+
   }
 
   async close(){
@@ -69,15 +75,27 @@ export class OpcionUsuarioComponent implements OnInit {
     this.close();
   }
 
+  contadorViaje(viajes: any){
+    let contador = 0;
+    console.log(viajes.length);
+    viajes.forEach(element => {
+        
+        if (element.chofer == this.usuario.usuario) {
+          
+            contador += 1;
+        }
+    });
+    this.cantidadViaje = contador;
+    console.log(contador);
+  }
+
   tipoUsuario(){
     let tipoU = this.usuario.tipoUsuario;
     if (tipoU === 'Chofer') {
-      console.log('Chofer')
         return true;
     }
 
     else if (tipoU === 'Pasajero') {
-      console.log('Pasajero');
       return false;
   }
 
@@ -89,8 +107,7 @@ export class OpcionUsuarioComponent implements OnInit {
   flag3: boolean = false; // Capacidad
   fecha: any;
   validar(){
-    if (this.viaje.destino !== '' && this.viaje.tarifa !== '' && this.viaje.capacidad !== '' 
-    && this.viaje.patente !== '' && this.viaje.modelo !== ''  && this.viaje.color !== '' ) {
+    if (this.viaje.destino !== '' && this.viaje.tarifa !== '' && this.viaje.capacidad !== '' ) {
       
        this.flag = true;
     }
@@ -135,9 +152,9 @@ export class OpcionUsuarioComponent implements OnInit {
           
           this.firebase.agregarViaje({
           chofer: this.usuario.usuario,
-          patente: this.viaje.patente,
-          color: this.viaje.color,
-          modelo: this.viaje.modelo,
+          patente: this.usuario.patente,
+          color: this.usuario.color,
+          modelo: this.usuario.modelo,
           inicio: this.viaje.inicio, 
           destino: this.viaje.destino,
           tarifa: this.viaje.tarifa, 
@@ -157,6 +174,24 @@ export class OpcionUsuarioComponent implements OnInit {
       this.mensajeToast('Campos vacios');
     }
     
+  }
+
+  tomarViaje(id: any){
+    
+    this.viajes.forEach(element => {
+        
+      if (element.id === id) {
+       
+          
+          this.mensajeFirebase.agregarMensaje({
+            chofer: element.chofer,
+            destino: element.destino,
+            tarifa: element.tarifa,
+            horaSalida: element.horaSalida,
+            pasajero: this.usuario.usuario
+          });
+      }
+  });
   }
 
   crearFecha(){

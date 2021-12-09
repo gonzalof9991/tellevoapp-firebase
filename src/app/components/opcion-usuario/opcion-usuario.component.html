@@ -3,7 +3,7 @@
 <ion-content>
     <div id="div-viajes" *ngIf="tipoUsuario() === false" >
         <ion-title class="ion-margin ion-text-center">Disponibles</ion-title>
-        <ion-card *ngFor="let viaje of viajes" class="ion-margin">
+        <ion-card *ngFor="let viaje of viajes"  class="ion-margin">
             <ion-card-content>
                 <ion-list >
                     <img class="img-auto" src="https://cdn-icons-png.flaticon.com/128/741/741460.png">
@@ -41,7 +41,8 @@
                        
                        
                     <a class="a-viaje" href="mailto:{{this.usuario.email}}?cc={{this.viaje.email}}&subject=Reserva%20Viaje%20%20|%20Codigo%20viaje:%20{{this.viaje.id}}&body=Confirmacion%20viaje.">
-                        <ion-button  expand="full"  color="success"> 
+                        <ion-button (click)="tomarViaje(viaje.id)"  expand="full"  color="success"> 
+                            <ion-icon name="airplane-outline" slot="start"></ion-icon>
                             Tomar viaje
                         </ion-button>
                     </a>
@@ -54,6 +55,15 @@
 </div>
 <div id="crear-viaje" *ngIf="tipoUsuario()" >
     <ion-card>
+        <ion-card-header>
+            <ion-card-subtitle>Total de viajes</ion-card-subtitle>
+            
+        </ion-card-header>
+        <ion-card-content>
+            <ion-title class="ion-text-center">{{cantidadViaje}}</ion-title>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
         <ion-card-content>
             <ion-list>
                 <ion-list-header>
@@ -62,18 +72,6 @@
                 <ion-item >
                     <ion-label position="floating" color="medium">Destino</ion-label>
                     <ion-input type="text" placeholder="¿A donde vas?" [(ngModel)]="viaje.destino"></ion-input>
-                </ion-item>
-                <ion-item >
-                    <ion-label position="floating" color="medium">Patente</ion-label>
-                    <ion-input type="text" placeholder="LHJ678" [(ngModel)]="viaje.patente"></ion-input>
-                </ion-item>
-                <ion-item >
-                    <ion-label position="floating" color="medium">Color</ion-label>
-                    <ion-input type="text" placeholder="Blanco" [(ngModel)]="viaje.color"></ion-input>
-                </ion-item>
-                <ion-item >
-                    <ion-label position="floating" color="medium">Modelo</ion-label>
-                    <ion-input type="text" placeholder="Model Y" [(ngModel)]="viaje.modelo"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label position="floating" color="medium">Capacidad</ion-label>

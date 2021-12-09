@@ -55,21 +55,11 @@ export class RestablecerPage implements OnInit {
   // Creacion de async alert
   async presentAlert(msg: string){
     const alert = await this.alertController.create({
-      cssClass: 'ion-text-center',
+      cssClass: 'my-custom-class',
       header: msg,
       animated: true,
       translucent:true,
-      buttons: [
-        {
-          text: 'Intentar de nuevo',
-          role: 'cancel',
-          cssClass: 'large primary ion-padding-horizontal',
-          handler: (blah) => {
-            console.log('Confirm Cancel: blah');
-          },
-
-        }
-      ]
+      
 
     });
 
